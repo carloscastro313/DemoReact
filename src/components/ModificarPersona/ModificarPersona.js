@@ -24,7 +24,9 @@ const ModificarPersona = (props) => {
             }
         }
         obtenerDatos(history,id)
-
+        return() => {
+            
+        }
     })
 
     const submit = async (event) => {
