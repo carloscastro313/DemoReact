@@ -18,11 +18,11 @@ const AltaPersona = () => {
 
         try {
             const ref = await firestore.collection('Persona')
-            const data = await ref.where('correo','===',persona.correo.trim()).get()
+            const data = await ref.where('correo','==',persona.correo.trim()).get()
             const resultado = data.docs.map(doc => ({id: doc.id, ...doc.data()}))
             if(resultado.length === 0){
                 ref.add(persona)
-                alert("Se a creado con existo!!!")
+                alert("Se a creado con exito!!!")
                 form.current.reset()
             }else{
                 alert("Ya existe persona con ese correo")
